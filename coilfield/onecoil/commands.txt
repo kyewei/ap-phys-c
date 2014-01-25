@@ -1,0 +1,9 @@
+x = 0:0.0001:0.32
+t=0:0.0001:0.08
+x=t+0.12
+y=0.08*cos(2*pi*800*t)+0.16
+z=0.08*sin(2*pi*800*t)+0.16
+plot3(x,y,z)
+hold on
+quiver3(VarName1,VarName2,VarName3,VarName4,VarName5,VarName6)
+hold off
