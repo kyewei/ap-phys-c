@@ -1,40 +1,37 @@
-root = 'C:\\Users\\Kye\\Desktop\\'
+#!/usr/bin/python 
 
+file = open("/home/kye/Desktop/blue","r")
+text = file.readlines()
 
-time = []
-data1 = []
-data2 = []
-data3 = []
-dataList = time;
+datacolumns=0
+for line in text:
+	if "</ColumnCells>"in line:
+		collect=False
+		datacolumns+=1
 
-def nextList(currentList):
-    if currentList is time:
-        return data1
-    elif currentList is data1:
-        return data2
-    elif currentList is data2:
-        return data3
-    elif currentList is data3:
-        return None
+data = [[] for i in range(datacolumns)]
 
-dataCollect = False
-with open(root+'blue','rU') as labPro:
-    for line in labPro:
-        if dataList != None:
-            if "</ColumnCells>" in line:
-                dataCollect = False
-            if dataCollect:
-                dataList.append (line.encode('utf-8'))
-                #print(line)
-            if "<ColumnCells>" in line:
-                dataCollect = True
-                dataList = nextList(dataList)
+datanumber=0
+collect=False
+for line in text:
+	if "</ColumnCells>"in line:
+		collect=False
+		datanumber+=1
+	if collect:
+		data[datanumber].append(float(line))
+	if "<ColumnCells>"in line:
+		collect=True
 
+file.close()
 
-import csv
-print(len(time))
-with open(root+"output.csv", "w", newline='') as f:
-    writer = csv.writer(f, delimiter=',')
-    writer.writerow(time)
-    #for x in range(0,len(time)-1):
-    #    writer.writerow(time[x],data1[x], data2[x], data3[x])
+file = open("data2","w")
+for j in range(0,len(data[0])):
+	stringto=""
+	for i in range(0,len(data)):
+		stringto=stringto + str(data[i][j])
+		if (i <len(data)-1):
+			stringto=stringto + ","
+	stringto=stringto+ "\n"
+	file.write(stringto)
+
+file.close()
