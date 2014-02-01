@@ -1,7 +1,7 @@
-old-ap-physics-projects
+old-phys12
 =======================
 
-A catalogue of old AP Physics Simulations
+A catalogue of old simulations for an unnamed really-hard physics course
 
 Uploading these since the course is over now..
 
