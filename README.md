@@ -1,4 +1,4 @@
-old-phys12
+old-things
 =======================
 
 A catalogue of old simulations for an unnamed really-hard physics course
