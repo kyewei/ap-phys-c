@@ -1,14 +1,14 @@
 old-things
 =======================
 
-A catalogue of old simulations for an unnamed really-hard physics course
+A catalogue of old simulations/assignments for an unnamed really-hard physics course
 
 Uploading these since the course is over now..
 
 
 
 
-
+matrixfun: when the teacher tells us to perform a regression of points using Vandermonde matrices without teaching us exactly how to do it... This implements regular matrix operations, along with a recursive nxn determinant solver(September 2013) (C++)
 
 elastic-balls: 2D simulation of elastic collisions with round balls that behave according to Hooke's law (10-08-2013 to 10-12-2013) (Java gui, C++ nogui)
 
